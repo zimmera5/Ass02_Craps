@@ -1,5 +1,5 @@
 import java.util.Random;
-import java.util.Scanner
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
@@ -9,6 +9,7 @@ public class Main {
         Random dice2 = new Random();
         int total;
         String trash;
+        String keepPlaying = "y";
 
             int d1Value, d2Value; //setting the variables for the formula for program
             do {
@@ -46,10 +47,19 @@ public class Main {
                 } else {
                     System.out.println("Keep Rolling");
                 }
-            }while(point != total)
+            }while(point != total);
 
-            System.out.println("Do you want to play again? Say Y or N");
-            Scanner keyboard = new Scanner(System.in)
+            do {
+                System.out.print("Do you want to play again? Say Y or N: ");
+                Scanner keyboard = new Scanner(System.in);
+                keepPlaying = keyboard.nextLine();
+                while (keepPlaying.equalsIgnoreCase("y")) ;
+                    else{
+                    trash = keyboard.nextLine();
+                    System.out.println("You have not enter Y or N - " + trash + "please enter Y or N."); //variable to have user put correct inputs
+                }
+            }
+        }
 
 
 
