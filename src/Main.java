@@ -49,19 +49,18 @@ public class Main {
                 }
             }while(point != total);
 
-            do {
                 System.out.print("Do you want to play again? Say Y or N: ");
                 Scanner keyboard = new Scanner(System.in);
                 keepPlaying = keyboard.nextLine();
-                while (keepPlaying.equalsIgnoreCase("y")) ;
+            if (keepPlaying.equalsIgnoreCase("y")) ;
                     else{
                     trash = keyboard.nextLine();
                     System.out.println("You have not enter Y or N - " + trash + "please enter Y or N."); //variable to have user put correct inputs
-                }
-            }
+                    return;
+                }if (keepPlaying.equalsIgnoreCase("n"))
+                    System.out.println("Thank you for playing :)");
         }
 
 
 
     }
-}
