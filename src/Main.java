@@ -13,7 +13,8 @@ public class Main {
             do {
                 d1Value = dice1.nextInt(6) + 1;
                 d2Value = dice2.nextInt(6) + 1;
-                total = d1Value + d2Value;
+                //total = d1Value + d2Value;
+                total = 2; //varible for testing
                 System.out.printf("%d and %d equals %d\n", d1Value, d2Value, total); //formulas
                 switch (total){
                     case 2:
