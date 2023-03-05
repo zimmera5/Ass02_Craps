@@ -8,6 +8,7 @@ public class Main {
         Random dice1 = new Random();
         Random dice2 = new Random();
         int total;
+        String trash;
 
             int d1Value, d2Value; //setting the variables for the formula for program
             do {
@@ -34,6 +35,20 @@ public class Main {
                         break;
                 }
             }while (point ==0);
+
+            do {
+                d1Value = dice1.nextInt(6) + 1; //Variable repeating for second roll
+                d2Value = dice2.nextInt(6) + 1;
+                total = d1Value + d2Value;
+                if (total == 7){
+                    System.out.println("7 - you lose :(");
+                    bank -=bet;
+                    return; //quit roll
+                } else if (total == point) {
+                    System.out.println("Point - you win!");
+                    bank +=bet;
+                }
+            }while(point != total)
 
 
 
