@@ -9,7 +9,8 @@ public class Main {
         Random dice2 = new Random();
         int total;
         String trash;
-        String keepPlaying = "y or n";
+        String keepPlaying = "y or n"; // In my mush brain today I could not get this to work in the prompt.
+                                       // I know I am not remembering something simple for this
 
             int d1Value, d2Value; //setting the variables for the formula for program
             do {
@@ -17,7 +18,7 @@ public class Main {
                 d2Value = dice2.nextInt(6) + 1;
                 total = d1Value + d2Value; //formula to figure results
                 //total = 7; //varible for testing
-                System.out.printf("%d and %d equals %d\n", d1Value, d2Value, total); //formulas
+                System.out.printf("%d and %d equals %d\n", d1Value, d2Value, total); //formula
                 switch (total){
                     case 2:
                     case 3:
@@ -31,7 +32,7 @@ public class Main {
                     default:
                         point = total;
                         System.out.println("Point " + point);
-                        break;
+                        break; //used to break the switch
                 }
             }while (point ==0);
 
