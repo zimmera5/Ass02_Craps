@@ -1,10 +1,10 @@
 import java.util.Random;
+import java.util.Scanner
 public class Main {
     public static void main(String[] args) {
 
-        int bank = 100; //variables for the program
-        int bet = 10;
-        int point = 0;
+
+        int point = 0; //variables for the program
         Random dice1 = new Random();
         Random dice2 = new Random();
         int total;
@@ -22,12 +22,10 @@ public class Main {
                     case 3:
                     case 12:
                         System.out.println(total + " you lose");
-                        bank -= bet;
                         break;
                     case 7:
                     case 11:
                         System.out.println(total + " you win");
-                        bank += bet;
                         break;
                     default:
                         point = total;
@@ -42,13 +40,16 @@ public class Main {
                 total = d1Value + d2Value;
                 if (total == 7){
                     System.out.println("7 - you lose :(");
-                    bank -=bet;
                     return; //quit roll
                 } else if (total == point) {
                     System.out.println("Point - you win!");
-                    bank +=bet;
+                } else {
+                    System.out.println("Keep Rolling");
                 }
             }while(point != total)
+
+            System.out.println("Do you want to play again? Say Y or N");
+            Scanner keyboard = new Scanner(System.in)
 
 
 
