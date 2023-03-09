@@ -34,33 +34,44 @@ public class Main {
                         System.out.println("Point " + point);
                         break; //used to break the switch
                 }
-            }while (point ==0);
+            
 
-            do {
-                d1Value = dice1.nextInt(6) + 1; //Variable repeating for second roll
-                d2Value = dice2.nextInt(6) + 1;
-                total = d1Value + d2Value;
-                if (total == 7){
-                    System.out.println("7 - you lose :(");
-                    return; //quit
-                } else if (total == point) {
-                    System.out.println("Point - you win!");
-                } else {
-                    System.out.println("Keep Rolling");
-                }
-            }while(point != total);
+                do {
+                    d1Value = dice1.nextInt(6) + 1; //Variable repeating for second roll
+                    d2Value = dice2.nextInt(6) + 1;
+                    total = d1Value + d2Value;
+                    if (total == 7){
+                        System.out.println("7 - you lose :(");
+                        return; //quit
+                    } else if (total == point) {
+                        System.out.println("Point - you win!");
+                    } else {
+                        System.out.println("Keep Rolling");
+                    }
+                }while(point != total);
 
-        System.out.print("Do you want to play again? Say Y or N: ");
-        Scanner keyboard = new Scanner(System.in);//scanner variable to setup for if they want to play again
-                keepPlaying = keyboard.nextLine();
-            if (keepPlaying.equalsIgnoreCase("y"));
-                    else{
-                    trash = keyboard.nextLine();
-                    System.out.println("You have not enter Y or N - " + trash + " please enter Y or N."); //variable to have user put correct inputs
-                }if (keepPlaying.equalsIgnoreCase("n"))
-                    System.out.println("Thank you for playing :)");
 
-        }
+                do{
+                    System.out.print("Do you want to play again? Say Y or N: ");
+                    Scanner keyboard = new Scanner(System.in);//scanner variable to setup for if they want to play again
+                            keepPlaying = keyboard.nextLine();
+                        if (keepPlaying.equalsIgnoreCase("y")){
+                            System.out.println("Ok, we are going to roll again!");
+
+                        }
+
+                        else if (keepPlaying.equalsIgnoreCase("n")){
+                                System.out.println("Thank you for playing :)");
+                                continueYN = false;
+
+                        }
+                        else{
+                                trash = keyboard.nextLine();
+                                System.out.println("You have not enter Y or N - " + trash + " please enter Y or N."); //variable to have user put correct inputs
+                        }
+                }while (!validValue);
+            
+            }while (continueYN);
 
 
 
